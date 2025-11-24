@@ -1,0 +1,19 @@
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_URL:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE:backend-challenge-database}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:PIh4Yrv75BLP1SuXY9XU}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        format_sql: false
+    generate-ddl: false
+    show-sql: false
+    open-in-view: true
+  flyway:
+    baseline-on-migrate: true
+    locations: db/migration
